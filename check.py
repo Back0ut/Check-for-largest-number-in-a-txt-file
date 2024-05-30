@@ -12,8 +12,7 @@ def find_largest_number(filename):
             for line_number, line in enumerate(file, 1):
                 try:
                     number = float(line.strip())
-                    if largest_number is None or number > largest_number:
-                        largest_number = number
+                    if largest_number is None or number > largest_number: largest_number = number
                     
                 except ValueError:
                     error_count += 1
@@ -39,8 +38,7 @@ def find_smallest_number(filename):
             for line_number, line in enumerate(file, 1):
                 try:
                     number = float(line.strip())
-                    if smallest_number is None or number < smallest_number:
-                        smallest_number = number
+                    if smallest_number is None or number < smallest_number: smallest_number = number
                 
                 except ValueError:
                     error_count += 1

@@ -27,8 +27,7 @@ def find_largest_number(filename):
     if largest_number is not None:
         return largest_number
     
-    else:
-        print(f"No valid numbers found in the file '{filename}'.")
+    print(f"No valid numbers found in the file '{filename}'.")
 
     if error_count > 0: print(f"Total number of errors: {error_count}")
 
@@ -60,9 +59,8 @@ def find_smallest_number(filename):
 
     if smallest_number is not None:
         return smallest_number
-    
-    else:
-        print(f"No valid numbers found in the file '{filename}'.")
+
+    print(f"No valid numbers found in the file '{filename}'.")
 
     if error_count > 0:
         print(f"Total number of errors: {error_count}")

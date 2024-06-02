@@ -67,8 +67,7 @@ def find_smallest_number(filename):
     if error_count > 0:
         print(f"Total number of errors: {error_count}")
 
-def midPoint(num1, num2):
-    return (num1 + num2) / 2
+midPoint = lambda x, y: (x + y) / 2
 
 if __name__ == '__main__':
     largest, smallest = find_largest_number('numbers.txt'), find_smallest_number('numbers.txt')

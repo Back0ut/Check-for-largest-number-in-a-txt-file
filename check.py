@@ -67,12 +67,12 @@ def find_smallest_number(filename):
     if error_count > 0:
         print(f"Total number of errors: {error_count}")
 
+def midPoint(num1, num2):
+    return (num1 + num2) / 2
+
 if __name__ == '__main__':
-    largest = find_largest_number('numbers.txt')
-    smallest = find_smallest_number('numbers.txt')
+    largest, smallest = find_largest_number('numbers.txt'), find_smallest_number('numbers.txt')
+    midpoint = midPoint(largest, smallest)
     
     if largest is not None and smallest is not None:
-        print(f'Largest Number: {largest}\nSmallest Number: {smallest}')
-       
-        midpoint = (largest + smallest) / 2
-        print(f'Midpoint (Largest and Smallest number): {midpoint}')
+        print(f'Largest Number: {largest}\nSmallest Number: {smallest}\nMidpoint Between Largest and Smallest Number: {midpoint}')

@@ -1,6 +1,5 @@
-import os
 import tkinter as tk
-from tkinter import filedialog, messagebox
+from tkinter import filedialog
 
 def find_largest_number(filename):
     error_count = 0
@@ -18,6 +17,7 @@ def find_largest_number(filename):
                 except ValueError:
                     error_count += 1
                     print(f'Error occurred while processing line "{line.strip()}" at line {line_number}: Invalid number format')
+   
     except FileNotFoundError:
         print(f"The file '{filename}' was not found.")
     
@@ -68,12 +68,12 @@ Average = lambda *nums: sum(nums) / len(nums) if nums else 0
 
 def select_file():
     filename = filedialog.askopenfilename(filetypes=[("Text files", "*.txt")])
-    
     if filename:
         process_file(filename)
 
 def process_file(filename):
-    largest, smallest = find_largest_number(filename), find_smallest_number(filename)
+    largest = find_largest_number(filename)
+    smallest = find_smallest_number(filename)
     
     if largest is not None and smallest is not None:
         midpoint = midPoint(largest, smallest)
@@ -83,10 +83,10 @@ def process_file(filename):
         result_label.config(text=result_text)
     
     else:
-        messagebox.showerror("Error", "No valid numbers found in the file.")
+        result_label.config(text="Error: No valid numbers found in the file.")
 
 root = tk.Tk()
-root.title("Number Processor")
+root.title('Number Processor')
 
 frame = tk.Frame(root)
 frame.pack(pady=20)

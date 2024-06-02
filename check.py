@@ -44,6 +44,7 @@ def find_smallest_number(filename):
                 except ValueError:
                     error_count += 1
                     print(f'Error occurred while processing line "{line.strip()}" at line {line_number}: Invalid number format')
+    
     except FileNotFoundError:
         print(f"The file '{filename}' was not found.")
     
@@ -69,6 +70,7 @@ def select_file():
 
 def process_file(filename):
     largest, smallest = find_largest_number(filename), find_smallest_number(filename)
+    
     if largest is not None and smallest is not None:
         midpoint = midPoint(largest, smallest)
         average = Average(smallest, largest)

@@ -11,8 +11,10 @@ def find_largest_number(filename):
             for line_number, line in enumerate(file, 1):
                 try:
                     number = float(line.strip())
+                    
                     if largest_number is None or number > largest_number:
                         largest_number = number
+                
                 except ValueError:
                     error_count += 1
                     print(f'Error occurred while processing line "{line.strip()}" at line {line_number}: Invalid number format')
@@ -39,8 +41,10 @@ def find_smallest_number(filename):
             for line_number, line in enumerate(file, 1):
                 try:
                     number = float(line.strip())
+                    
                     if smallest_number is None or number < smallest_number:
                         smallest_number = number
+                
                 except ValueError:
                     error_count += 1
                     print(f'Error occurred while processing line "{line.strip()}" at line {line_number}: Invalid number format')
